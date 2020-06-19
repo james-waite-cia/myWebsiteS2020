@@ -10,7 +10,7 @@ function mousePressed() {
     let r = random(10, 40);
     let b = new Bubble(mouseX, mouseY, r);
     bubbles.push(b);
-    console.log(bubbles);
+//    console.log(bubbles);
 }
 
 function draw() {
@@ -18,6 +18,17 @@ function draw() {
     for (let i = 0; i < bubbles.length; i++) {
         bubbles[i].show();
         bubbles[i].move();
+        let overlapping = false;
+        for (let other of bubbles) {
+            if (bubbles[i] !== other && bubbles[i].intersects(other)) {
+                overlapping = true;
+            }
+        }
+        if (overlapping) {
+            bubbles[i].changeColor(255);
+        } else {
+            bubbles[i].changeColor(0);
+        }
     }
 }
 
@@ -26,6 +37,21 @@ class Bubble {
         this.x = x;
         this.y = y;
         this.r = r;
+        this.brightness = 0;
+    }
+    
+    intersects(other) {
+        let d = dist(this.x, this.y, other.x, other.y);
+        return d < this.r + other.r;
+    }
+    
+    changeColor(bright) {
+        this.brightness = bright;
+    }
+    
+    contains(px, py) {
+        let d = dist(px, py, this.x, this.y);
+        return d < this.r;
     }
     
     move() {
@@ -38,7 +64,7 @@ class Bubble {
 //        strokeWeight(4);
 //        noFill();
         noStroke();
-        fill(255, 50);
+        fill(this.brightness, 50);
         ellipse(this.x, this.y, this.r * 2);
     }
 }
