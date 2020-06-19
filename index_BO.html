@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>James's Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    
+    <div class="header">
+        <h1>Interactive Internet Art</h1>
+        <p>Projects Completed in Summer 2020</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index_CG.html">Circle Generator</a>
+        <a href="index_PI.html">Painting with Images</a>
+        <a href="#" class="active">Bouncing Objects</a>
+        <a href="#" class="right">Social Media Link</a>
+    </div>
+
+    <div class="row">
+        <div class="side clearfix">
+            <h2>Project Three</h2>
+            <p>This is the description of the third project.</p>
+            <hr>
+            <p>In this project, we will use matter.js to create basic 2D physics. We will use the pysics engine to create a world, and draw objects to that world.</p>
+            <br>
+        </div>
+        <div class="main clearfix">
+            <h2>Bouncing Objects</h2>
+            <div id='myContainer'></div>
+            <button type="button" onclick="createSquares()" class="button">
+                Create Squares!
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>Copyright &copy; 2020 James Waite</h5>
+    </div>
+    
+    <script src="js/p5.js"></script>
+    <script src="js/matter.min.js"></script>
+    <script src="js/app_BO.js"></script>
+    
+</body>
+</html>

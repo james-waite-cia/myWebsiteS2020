@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>James's Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .draggableImage {
+            position: absolute;
+            z-index: 9;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="header">
+        <h1>Interactive Internet Art</h1>
+        <p>Projects Completed in Summer 2020</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index_CG.html">Circle Generator</a>
+        <a href="index_PI.html">Painting with Images</a>
+        <a href="index_BO.html">Bouncing Objects</a>
+        <a href="#" class="active right">Draggable Images</a>
+    </div>
+
+    <div class="row">
+        <div class="side clearfix">
+            <h2>Project OPTIONAL!</h2>
+            <p>This is the description of an optional project.</p>
+            <hr>
+            <p>Lorem ipsum....</p>
+            <br>
+        </div>
+        <div class="main clearfix">
+            <h2>Draggable Images</h2>
+            <div id="myContainer"></div>
+<!--
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img id="drag2" src="img/flower1.png" draggable="true" ondragstart="drag(event)" width="50px" height="50px">
+            </div>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img id="drag1" src="img/flower0.png" draggable="true" ondragstart="drag(event)" width="50px" height="50px">
+            </div>
+-->
+            
+            <div class="draggableImage" id="drag0" style="left: 100px; top: 250px;">
+                <img src="img/flower0.png">
+            </div>
+            <div class="draggableImage" id="drag1" style="left: 100px; top: 450px;">
+                <img src="img/flower1.png">
+            </div>
+            <div class="draggableImage" id="drag2" style="left: 100px; top: 650px;">
+                <img src="img/flower2.png">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>Copyright &copy; 2020 James Waite</h5>
+    </div>
+    
+    <script src="js/p5.js"></script>
+    <script src="js/app_DI.js"></script>
+
+
+</body>
+</html>
